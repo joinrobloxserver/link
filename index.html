@@ -41,7 +41,7 @@
                 await sleep(5000);
                 window.addEventListener("focus", () => {document.body.innerHTML = "<p>You may now close this window.<br>If Roblox did not launch, please ensure you have it installed.<br><a href='https://www.roblox.com/download/client?os=win'>Download Roblox</a></p>";});
             } else {
-                document.body.innerHTML = "<p>Missing placeId or jobId in URL.</p>";
+                document.body.innerHTML = "<p>Missing URL parameters.</p>";
             }
         }
     </script>

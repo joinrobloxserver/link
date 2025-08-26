@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Roblox Join Redirect</title>
+    <link rel="icon" type="image/x-icon" href="https://www.google.com/s2/favicons?domain=https://www.roblox.com&sz=32">
+    <style>
+        body {
+            background-color: #121212;
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        a {
+            color: #4ea1ff;
+            text-decoration: underline;
+        }
+        p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+    </style>
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        window.onload = async function() {
+            const params = new URLSearchParams(window.location.search);
+            const placeId = params.get("placeId");
+            const jobId = params.get("jobId");
+
+            if (placeId && jobId) {
+                const robloxLink = `roblox://placeID=${placeId}&gameInstanceId=${jobId}`;
+                window.location.href = robloxLink;
+                await sleep(5000);
+                document.body.innerHTML = "<p>You may now close this window.</p><p>If Roblox did not launch, please ensure you have it installed. <a href='https://www.roblox.com/download/client?os=win'>Download Roblox</a></p>";
+            } else {
+                document.body.innerHTML = "<p>Missing placeId or jobId in URL.</p>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Launching Roblox…</p>
+</body>
+</html>

@@ -34,8 +34,10 @@
             const params = new URLSearchParams(window.location.search);
             const placeId = params.get("placeId");
             const jobId = params.get("jobId");
+            const placeIdRegex = /^\d{1,20}$/;
+            const jobIdRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
-            if (placeId && jobId) {
+            if (placeIdRegex.text(placeId) && jobIdRegex.test(jobId)) {
                 const robloxLink = `roblox://placeID=${placeId}&gameInstanceId=${jobId}`;
                 window.location.href = robloxLink;
                 await sleep(5000);

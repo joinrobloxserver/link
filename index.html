@@ -39,7 +39,7 @@
                 const robloxLink = `roblox://placeID=${placeId}&gameInstanceId=${jobId}`;
                 window.location.href = robloxLink;
                 await sleep(5000);
-                window.addEventListener("focus", () => {document.body.innerHTML = "<p>You may now close this window.</p><p>If Roblox did not launch, please ensure Roblox was not open and you have Roblox installed <a href='https://www.roblox.com/download/client?os=win'>Download Roblox</a></p>";});
+                window.addEventListener("focus", () => {document.body.innerHTML = "<p>You can now close this window.</p><p>If Roblox did not launch, please ensure Roblox was not open and you have Roblox installed <a href='https://www.roblox.com/download/client?os=win'>Download Roblox</a></p>";});
             } else {
                 document.body.innerHTML = "<p>Missing placeId or jobId in URL.</p>";
             }
